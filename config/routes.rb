@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users
       resources :lists
-      resources :videos
+      resources :shows
+
+      get "/users/:userID/lists", to: "users#lists"
     end
   end
 end
