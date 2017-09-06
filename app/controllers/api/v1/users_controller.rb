@@ -18,4 +18,10 @@ class Api::V1::UsersController < ApplicationController
     render json: @user.lists
   end
 
+  def shows
+    @user = User.find_by(fb_id: params[:userID])
+    @shows = @user.lists.find_by(name: params[:listName]).shows
+    render json: @shows
+  end
+
 end

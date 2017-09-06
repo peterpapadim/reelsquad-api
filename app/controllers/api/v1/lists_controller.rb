@@ -6,4 +6,10 @@ class Api::V1::ListsController < ApplicationController
     render json: @user.lists
   end
 
+  def destroy
+    @user = User.find_by(fb_id: params[:userID])
+    @user.lists.find_by(name: params[:listName]).destroy
+    render json: @user.lists
+  end
+
 end
