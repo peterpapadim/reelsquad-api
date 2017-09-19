@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       post "/users/:userID/lists/:listName/users/update", to: "lists#update_users"
 
       delete "/users/:userID/lists/:listName", to: "lists#destroy"
+      delete "/users/:userID/lists/:listName/shows/:refID", to: "shows#destroy"
     end
   end
 end
